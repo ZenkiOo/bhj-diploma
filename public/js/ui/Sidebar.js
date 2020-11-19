@@ -17,9 +17,7 @@ class Sidebar {
    * переключает два класса для body: sidebar-open и sidebar-collapse
    * при нажатии на кнопку .sidebar-toggle
    * */
-  static initToggleButton() {
-
-  }
+  static initToggleButton() {}
 
   /**
    * При нажатии на кнопку входа, показывает окно входа
@@ -29,7 +27,14 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
-
+    const loginBtn = document.querySelector(".menu-item_login"),
+      regBtn = document.querySelector(".menu-item_register");
+      
+    loginBtn.addEventListener("click", () => {
+      App.getModal("login").open();
+    });
+    regBtn.addEventListener("click", () => {
+      App.getModal("register").open();
+    });
   }
-
 }
