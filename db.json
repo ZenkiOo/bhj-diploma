@@ -6,6 +6,20 @@
       "password": "demo",
       "id": "1",
       "isAuthorized": false
+    },
+    {
+      "name": "Алексей",
+      "email": "aleksei.kvasow@gmail.com",
+      "password": "alex",
+      "id": "begqfg4qgkhq7cagd",
+      "isAuthorized": false
+    },
+    {
+      "name": "Лилит",
+      "email": "lilit@mail.ru",
+      "password": "lili",
+      "id": "begqfg58kkht6d6by",
+      "isAuthorized": true
     }
   ],
   "accounts": [

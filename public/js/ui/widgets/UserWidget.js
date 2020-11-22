@@ -10,8 +10,11 @@ class UserWidget {
    * Если переданный элемент не существует,
    * необходимо выкинуть ошибку.
    * */
-  constructor( element ) {
-
+  constructor(element) {
+    if (!element) {
+      throw new Error("Empty Modal");
+    }
+    this.element = element;
   }
 
   /**
@@ -22,6 +25,9 @@ class UserWidget {
    * авторизованного пользователя
    * */
   update() {
-
+    if (User.current()) {
+      const user = User.current();
+      document.querySelector('.user-name').innerText = user.name;
+    }
   }
 }

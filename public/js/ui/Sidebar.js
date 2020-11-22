@@ -28,13 +28,24 @@ class Sidebar {
    * */
   static initAuthLinks() {
     const loginBtn = document.querySelector(".menu-item_login"),
-      regBtn = document.querySelector(".menu-item_register");
-      
-    loginBtn.addEventListener("click", () => {
+      regBtn = document.querySelector(".menu-item_register"),
+      logOutBtn = document.querySelector(".menu-item_logout");
+
+    loginBtn.addEventListener("click", (event) => {
+      event.preventDefault();
       App.getModal("login").open();
     });
-    regBtn.addEventListener("click", () => {
+    regBtn.addEventListener("click", (event) => {
+      event.preventDefault();
       App.getModal("register").open();
+    });
+    logOutBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      User.logout({}, (err, response) => {
+        if (response.success === true) {
+          App.setState("init");
+        }
+      });
     });
   }
 }
