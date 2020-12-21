@@ -27,9 +27,7 @@ class User {
    * из локального хранилища
    * */
   static current() {
-    if (localStorage.user) {
       return JSON.parse(localStorage.getItem("user"));
-    }
   }
 
   /**
@@ -40,7 +38,6 @@ class User {
     const options = {
       url: User.URL + "/current",
       method: "GET",
-      responseType: "json",
       data,
       callback: (err, response) => {
         if (response.success === true) {
@@ -65,7 +62,6 @@ class User {
     const options = {
       url: User.URL + "/login",
       method: "POST",
-      responseType: "json",
       data,
       callback: (err, response) => {
         if (response.success === true) {
@@ -89,7 +85,6 @@ class User {
     const options = {
       url: User.URL + "/register",
       method: "POST",
-      responseType: "json",
       data,
       callback: (err, response) => {
         if (response.success === true) {
@@ -111,7 +106,6 @@ class User {
     const options = {
       url: User.URL + "/logout",
       method: "POST",
-      responseType: "json",
       data,
       callback: (err, response) => {
         if (response.success === true) {
