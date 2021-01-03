@@ -18,7 +18,7 @@ class AccountsWidget {
     }
     this.element = element;
     this.registerEvents();
-    this.update()
+    this.update();
   }
 
   /**
@@ -50,9 +50,8 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
-    try {
-      const user = User.current();
-      Account.list(user, (err, response) => {
+    if (User.current()) {
+      Account.list(User.current(), (err, response) => {
         if (response.success) {
           this.clear();
           for (const account of response.data) {
@@ -60,8 +59,6 @@ class AccountsWidget {
           }
         }
       });
-    } catch {
-      return;
     }
   }
 
@@ -71,10 +68,9 @@ class AccountsWidget {
    * в боковой колонке
    * */
   clear() {
-    const accounts = this.element.getElementsByClassName("account");
-    for (let i = accounts.length - 1; i >= 0; i--) {
-      accounts[i].remove();
-    }
+    this.element.querySelectorAll(".account").forEach((account) => {
+      account.remove();
+    });
   }
 
   /**

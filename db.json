@@ -12,7 +12,7 @@
       "email": "aleksei.kvasow@gmail.com",
       "password": "alex",
       "id": "begqfg4qgkhq7cagd",
-      "isAuthorized": false
+      "isAuthorized": true
     },
     {
       "name": "Лилит",
@@ -37,6 +37,11 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Счет",
+      "user_id": "begqfg4qgkhq7cagd",
+      "id": "begqfg8wckjh2x9bi"
     }
   ],
   "transactions": [
@@ -190,6 +195,14 @@
       "sum": 2000,
       "account_id": "begqfg72wkivyu0ud",
       "created_at": "2020-12-19T17:22:18.089Z"
+    },
+    {
+      "id": "begqfg9eokjh2y1tf",
+      "type": "INCOME",
+      "name": "Пополнение",
+      "sum": 2000000,
+      "account_id": "begqfg8wckjh2x9bi",
+      "created_at": "2021-01-03T11:56:59.186Z"
     }
   ]
 }
